@@ -10,15 +10,16 @@ categories: Java
 ExcutorService is an interface that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchronous tasks.
 
 {% highlight java %}
-ExcutorService executorService = Executors.newFixedThreadPool(poolSize);
+ExcutorService executorService = Executors.newFixedThreadPool(10);
 for (int i = 0; i < 10; i++){
 	executorService.execute(new Runnable() {
-	  @Override
+		@Override
 		public void run() {
 			System.out.println(Thread.currentThread().getName() + " is here!");
 		}
-  });
+	});
 }
+executorService.shutdown();
 
 // output
 // pool-1-thread-1 is create!
@@ -32,6 +33,15 @@ for (int i = 0; i < 10; i++){
 // pool-1-thread-9 is create!
 // pool-1-thread-10 is create!
 {% endhighlight %}
+
+ExcutorService has two methods for shutdown all threads.
+{% highlight java %}
+//shutdown() method will wait all tasks are executed before terminating
+executorService.shutdown();
+//shutdownNow() method will terminat
+executorService.shutdownNow()
+{% endhighlight %}
+
 
 
 `YEAR-MONTH-DAY-title.MARKUP`
