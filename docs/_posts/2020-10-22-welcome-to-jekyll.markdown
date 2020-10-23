@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "ExecutorService note"
 date:   2020-10-22 14:46:18 +0800
-categories: jekyll update
+categories: Java
 ---
 
 {% include mermaid.html %}
