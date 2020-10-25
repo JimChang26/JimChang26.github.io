@@ -36,18 +36,16 @@ executorService.shutdown();
 // pool-1-thread-10 is here!
 {% endhighlight %}
 
-ExcutorService has two methods for shutdown all threads.
-
 # How to termination of threads
 
-ExecutorService provides two termination methods. Once the termination method is called, ExecutorService will not accept a new task.
+ExecutorService provides two termination methods. Once the termination method is called, ExecutorService will not accept any new task.
 
 the detail of this two Method in Java docs
 
 * shutdown()
   * Initiates an orderly shutdown in which previously submitted tasks are executed.
 * shutdownNow()
-  * Attempts to stop all actively executing tasks, halts the processing of waiting tasks, and returns a list of the tasks that were awaiting execution. <br> There are no guarantees beyond best-effort attempts to stop processing actively executing tasks. For example, typical implementations will cancel via Thread.interrupt(), so any task that fails to respond to interrupts may never terminate.
+  * Attempts to stop all actively executing tasks, halts the processing of waiting tasks, and returns a list of the tasks that were awaiting execution. <br><br> There are no guarantees beyond best-effort attempts to stop processing actively executing tasks. For example, typical implementations will cancel via Thread.interrupt(), so any task that fails to respond to interrupts may never terminate.
 
 The following method shuts down an ExecutorService in two phases, first by calling shutdown to reject incoming tasks, and then calling shutdownNow, if necessary, to cancel any lingering tasks:
 
