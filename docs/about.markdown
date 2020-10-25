@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Blogging for my developer life, help me to memorize all the questions I met. 
+Blogging for my developer's life, help me to memorize all the questions I met. 
