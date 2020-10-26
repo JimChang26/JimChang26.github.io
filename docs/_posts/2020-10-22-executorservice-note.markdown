@@ -7,6 +7,11 @@ categories: Java
 
 {% include mermaid.html %}
 
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [What is ExcutorService](#what-is-excutorservice)
+- [How to termination of ExecutorService](#how-to-termination-of-executorservice)
+
 # What is ExcutorService
 
 ExcutorService is an interface that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchronous tasks.
@@ -36,7 +41,7 @@ executorService.shutdown();
 // pool-1-thread-10 is here!
 {% endhighlight %}
 
-# How to termination of threads
+# How to termination of ExecutorService
 
 ExecutorService provides two termination methods. Once the termination method is called, ExecutorService will not accept any new task.
 
