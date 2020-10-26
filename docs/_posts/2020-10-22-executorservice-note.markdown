@@ -7,8 +7,7 @@ categories: Java
 
 {% include mermaid.html %}
 
-# Table of contents
-- [Table of contents](#table-of-contents)
+**Table of contents**
 - [What is ExcutorService](#what-is-excutorservice)
 - [How to termination of ExecutorService](#how-to-termination-of-executorservice)
 
