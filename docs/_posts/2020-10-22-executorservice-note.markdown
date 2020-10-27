@@ -9,7 +9,7 @@ categories: Java
 
 **Table of contents**
 - [What is ExcutorService](#what-is-excutorservice)
-- [How to termination of ExecutorService](#how-to-termination-of-executorservice)
+- [How to shutdown an ExecutorService](#how-to-shutdown-an-executorservice)
 
 # What is ExcutorService
 
@@ -40,7 +40,7 @@ executorService.shutdown();
 // pool-1-thread-10 is here!
 {% endhighlight %}
 
-# How to termination of ExecutorService
+# How to shutdown an ExecutorService
 
 ExecutorService provides two termination methods. Once the termination method is called, ExecutorService will not accept any new task.
 
