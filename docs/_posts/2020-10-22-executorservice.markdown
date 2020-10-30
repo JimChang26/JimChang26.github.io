@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ExecutorService note"
+title:  "ExecutorService"
 date:   2020-10-22 14:46:18 +0800
 categories: Java
 ---
@@ -17,6 +17,18 @@ categories: Java
 ExcutorService is an interface that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchronous tasks.
 
 # How to use ExcutorService
+
+You can use Excutors to create an ExcutorService.There are four ways to create an ExcutorService.
+|Methods|Description|
+|---|---|
+|Excutors.newCachedThreadPool()|Creates a thread pool that creates new threads as needed, but will reuse previously constructed threads when they are available.|
+|Excutors.newFixedThreadPool(int nThreads)|Creates a thread pool that reuses a fixed number of threads operating off a shared unbounded queue.|
+|Excutors.newScheduledThreadPool(int corePoolSize)|Creates a thread pool that can schedule commands to run after a given delay, or to execute periodically.|
+|newSingleThreadExecutor()|Creates an Executor that uses a single worker thread operating off an unbounded queue.|
+
+
+
+
 {% highlight java %}
 ExcutorService executorService = Executors.newFixedThreadPool(10);
 for (int i = 0; i < 10; i++){
