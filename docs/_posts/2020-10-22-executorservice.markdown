@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ExecutorService note"
+title:  "ExecutorService"
 date:   2020-10-22 14:46:18 +0800
 categories: Java
 ---
@@ -8,17 +8,29 @@ categories: Java
 {% include mermaid.html %}
 
 **Table of contents**
-- [What is ExcutorService](#what-is-excutorservice)
-- [How to use ExcutorService](#how-to-use-excutorservice)
+- [What is ExecutorService](#what-is-executorservice)
+- [How to use ExecutorService](#how-to-use-executorservice)
 - [How to shutdown an ExecutorService](#how-to-shutdown-an-executorservice)
 
-# What is ExcutorService
+# What is ExecutorService
 
-ExcutorService is an interface that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchronous tasks.
+ExecutorService is an interface that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchronous tasks.
 
-# How to use ExcutorService
+# How to use ExecutorService
+
+You can use Executors to create an ExcutorService. Executors provide many methods to generate different types of thread pools. Chewing over which one is the best for your task.
+
+
+| Methods | Description |
+|-------|------------------|
+| Excutors.newCachedThreadPool() | Creates a thread pool that creates new threads as needed, but will reuse previously constructed threads when they are available. |
+| Excutors.newFixedThreadPool(int nThreads) | Creates a thread pool that reuses a fixed number of threads operating off a shared unbounded queue. |
+| Excutors.newScheduledThreadPool(int corePoolSize) | Creates a thread pool that can schedule commands to run after a given delay, or to execute periodically. |
+| newSingleThreadExecutor() | Creates an Executor that uses a single worker thread operating off an unbounded queue. |
+
+simple example
 {% highlight java %}
-ExcutorService executorService = Executors.newFixedThreadPool(10);
+ExecutorService executorService = Executors.newFixedThreadPool(10);
 for (int i = 0; i < 10; i++){
 	executorService.execute(new Runnable() {
 		@Override
@@ -46,7 +58,7 @@ executorService.shutdown();
 
 ExecutorService provides two termination methods. Once the termination method is called, ExecutorService will not accept any new task.
 
-the detail of this two Method in Java docs
+the detail of this two methods in Java docs
 
 * shutdown()
   * Initiates an orderly shutdown in which previously submitted tasks are executed.
@@ -74,4 +86,3 @@ The following method shuts down an ExecutorService in two phases, first by calli
    }
  }
 {% endhighlight %}
-
