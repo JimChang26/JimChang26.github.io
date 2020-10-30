@@ -9,12 +9,14 @@ categories: Java
 
 **Table of contents**
 - [What is ExcutorService](#what-is-excutorservice)
+- [How to use ExcutorService](#how-to-use-excutorservice)
 - [How to shutdown an ExecutorService](#how-to-shutdown-an-executorservice)
 
 # What is ExcutorService
 
 ExcutorService is an interface that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchronous tasks.
 
+# How to use ExcutorService
 {% highlight java %}
 ExcutorService executorService = Executors.newFixedThreadPool(10);
 for (int i = 0; i < 10; i++){

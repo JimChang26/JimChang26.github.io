@@ -9,11 +9,10 @@ categories: Java
 
 **Table of contents**
 - [What is BlockQueue](#what-is-blockqueue)
-- [How to shutdown an ExecutorService](#how-to-shutdown-an-executorservice)
 
 # What is BlockQueue
 
-ExcutorService is an interface that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchronous tasks.
+A Queue that additionally supports operations that wait for the queue to become non-empty when retrieving an element, and wait for space to become available in the queue when storing an element.
 
 {% highlight java %}
 ExcutorService executorService = Executors.newFixedThreadPool(10);
@@ -39,37 +38,3 @@ executorService.shutdown();
 // pool-1-thread-9 is here!
 // pool-1-thread-10 is here!
 {% endhighlight %}
-
-# How to shutdown an ExecutorService
-
-ExecutorService provides two termination methods. Once the termination method is called, ExecutorService will not accept any new task.
-
-the detail of this two Method in Java docs
-
-* shutdown()
-  * Initiates an orderly shutdown in which previously submitted tasks are executed.
-* shutdownNow()
-  * Attempts to stop all actively executing tasks, halts the processing of waiting tasks, and returns a list of the tasks that were awaiting execution. <br><br> There are no guarantees beyond best-effort attempts to stop processing actively executing tasks. For example, typical implementations will cancel via Thread.interrupt(), so any task that fails to respond to interrupts may never terminate.
-
-The following method shuts down an ExecutorService in two phases, first by calling shutdown to reject incoming tasks, and then calling shutdownNow, if necessary, to cancel any lingering tasks:
-
-{% highlight java %}
- void shutdownAndAwaitTermination(ExecutorService pool) {
-   pool.shutdown(); // Disable new tasks from being submitted
-   try {
-     // Wait a while for existing tasks to terminate
-     if (!pool.awaitTermination(60, TimeUnit.SECONDS)) {
-       pool.shutdownNow(); // Cancel currently executing tasks
-       // Wait a while for tasks to respond to being cancelled
-       if (!pool.awaitTermination(60, TimeUnit.SECONDS))
-           System.err.println("Pool did not terminate");
-     }
-   } catch (InterruptedException ie) {
-     // (Re-)Cancel if current thread also interrupted
-     pool.shutdownNow();
-     // Preserve interrupt status
-     Thread.currentThread().interrupt();
-   }
- }
-{% endhighlight %}
-
