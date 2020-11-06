@@ -27,6 +27,11 @@ You can use Excutors to create an ExcutorService.Excutors provides many methods 
 | newSingleThreadExecutor() | Creates an Executor that uses a single worker thread operating off an unbounded queue. |
 
 
+| Priority apples | Second priority | Third priority |
+|-------|--------|---------|
+| ambrosia | gala | red delicious |
+| pink lady | jazz | macintosh |
+| honeycrisp | granny smith | fuji |
 
 
 {% highlight java %}
