@@ -3,3 +3,4 @@ todo
 - blockqueue
 - progess bar with css
 - lombok
+- mysql timezone with mysql-connector-java

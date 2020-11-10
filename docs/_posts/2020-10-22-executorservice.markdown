@@ -8,17 +8,18 @@ categories: Java
 {% include mermaid.html %}
 
 **Table of contents**
-- [What is ExcutorService](#what-is-excutorservice)
-- [How to use ExcutorService](#how-to-use-excutorservice)
+- [What is ExecutorService](#what-is-executorservice)
+- [How to use ExecutorService](#how-to-use-executorservice)
 - [How to shutdown an ExecutorService](#how-to-shutdown-an-executorservice)
 
-# What is ExcutorService
+# What is ExecutorService
 
-ExcutorService is an interface that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchronous tasks.
+ExecutorService is an interface that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchronous tasks.
 
-# How to use ExcutorService
+# How to use ExecutorService
 
-You can use Excutors to create an ExcutorService.Excutors provides many methods for create differ
+You can use Executors to create an ExcutorService.Executors provide many methods to generate different thread pools in different usage. Chewing over which one is the best for your task.
+
 
 
 | Methods | Description |
@@ -29,15 +30,8 @@ You can use Excutors to create an ExcutorService.Excutors provides many methods 
 | newSingleThreadExecutor() | Creates an Executor that uses a single worker thread operating off an unbounded queue. |
 
 
-| Priority apples | Second priority | Third priority |
-|-------|--------|---------|
-| ambrosia | gala | red delicious |
-| pink lady | jazz | macintosh |
-| honeycrisp | granny smith | fuji |
-
-
 {% highlight java %}
-ExcutorService executorService = Executors.newFixedThreadPool(10);
+ExecutorService executorService = Executors.newFixedThreadPool(10);
 for (int i = 0; i < 10; i++){
 	executorService.execute(new Runnable() {
 		@Override
