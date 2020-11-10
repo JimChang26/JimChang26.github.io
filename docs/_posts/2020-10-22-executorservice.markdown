@@ -18,8 +18,7 @@ ExecutorService is an interface that provides methods to manage termination and 
 
 # How to use ExecutorService
 
-You can use Executors to create an ExcutorService.Executors provide many methods to generate different thread pools in different usage. Chewing over which one is the best for your task.
-
+You can use Executors to create an ExcutorService. Executors provide many methods to generate different types of thread pools. Chewing over which one is the best for your task.
 
 
 | Methods | Description |
@@ -29,7 +28,7 @@ You can use Executors to create an ExcutorService.Executors provide many methods
 | Excutors.newScheduledThreadPool(int corePoolSize) | Creates a thread pool that can schedule commands to run after a given delay, or to execute periodically. |
 | newSingleThreadExecutor() | Creates an Executor that uses a single worker thread operating off an unbounded queue. |
 
-
+simple example
 {% highlight java %}
 ExecutorService executorService = Executors.newFixedThreadPool(10);
 for (int i = 0; i < 10; i++){
@@ -59,7 +58,7 @@ executorService.shutdown();
 
 ExecutorService provides two termination methods. Once the termination method is called, ExecutorService will not accept any new task.
 
-the detail of this two Method in Java docs
+the detail of this two methods in Java docs
 
 * shutdown()
   * Initiates an orderly shutdown in which previously submitted tasks are executed.
@@ -87,4 +86,3 @@ The following method shuts down an ExecutorService in two phases, first by calli
    }
  }
 {% endhighlight %}
-

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "BlockQueue note"
+title:  "BlockQueue"
 date:   2020-10-29 16:19:18 +0800
 categories: Java
 ---
